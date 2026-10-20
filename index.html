@@ -33,7 +33,7 @@ body{background:var(--fundo);overflow:hidden;color:var(--texto);
 #btnCsv{all:unset;cursor:pointer;font-size:14px;font-weight:600;color:var(--lima);border:1px solid rgba(182,222,1,.45);border-radius:999px;padding:1px 12px}
 #btnCsv[hidden]{display:none}
 #btnCsv:hover{background:rgba(242,252,0,.12)}
-#filtros{right:120px;top:128px;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
+#filtros{right:120px;top:114px;display:flex;flex-direction:column;align-items:flex-end;gap:10px}
 .grupo{display:flex;gap:10px;align-items:center}
 .seg{display:flex;background:var(--painel-forte);border:1px solid rgba(182,222,1,.45);border-radius:999px;padding:3px}
 .seg button{all:unset;cursor:pointer;padding:6px 16px;border-radius:999px;font-size:16px;font-weight:600;color:var(--suave)}
@@ -102,7 +102,7 @@ td.uf{font-size:13px;color:var(--suave);text-align:center}
 td.vd{font-size:13px;color:var(--suave);max-width:170px;overflow:hidden;text-overflow:ellipsis}
 #clientes td.nm{max-width:300px}
 td.cob{font-size:13px;color:var(--suave)} td.cob b{color:var(--pouch);font-size:14px} td.cob.zero b{color:var(--apagado);font-weight:400}
-#marca{right:124px;top:66px;height:46px;width:auto}
+#marca{right:124px;top:58px;height:44px;width:auto}
 #segmentos{left:120px;top:658px;width:1060px;height:282px;padding:0;
   clip-path:polygon(0 0,100% 0,100% 100%,157px 100%,0 125px)}
 #vendedores{left:1200px;top:378px;width:600px;height:562px}
@@ -185,7 +185,37 @@ td.c.zero{color:var(--apagado);font-weight:400}
 #rotulo{all:unset;cursor:pointer;min-width:230px;text-align:center;font-size:17px;font-weight:600;padding:6px 4px;border-radius:8px}
 #rotulo:hover{color:var(--lima)}
 #rotulo::after{content:"";display:inline-block;margin-left:8px;border:5px solid transparent;border-top-color:currentColor;transform:translateY(3px)}
-#cal{right:392px;top:178px;width:372px;z-index:10;background:#05301B;border:1px solid var(--linha);border-radius:14px;padding:14px 14px 12px;
+/* Filtro de vendedores (pop-up) */
+#btnVend{all:unset;cursor:pointer;display:flex;align-items:center;gap:8px;height:40px;padding:0 16px;border-radius:999px;
+  background:var(--painel-forte);border:1px solid rgba(182,222,1,.45);font-size:16px;font-weight:600;color:var(--suave);white-space:nowrap}
+#btnVend:hover{color:var(--texto)}
+#btnVend svg{width:18px;height:18px;flex:none}
+#btnVend .qtd{font-size:13px;font-weight:700;background:rgba(234,246,228,.12);color:var(--texto);border-radius:999px;padding:1px 8px}
+#btnVend.ativo{background:var(--lima);border-color:var(--lima);color:#0B3A12}
+#btnVend.ativo .qtd{background:#0B3A12;color:var(--lima)}
+#popVend{right:120px;top:218px;width:420px;z-index:12;background:#05301B;border:1px solid var(--linha);border-radius:14px;
+  box-shadow:0 18px 44px rgba(0,0,0,.5);display:flex;flex-direction:column;max-height:780px}
+#popVend[hidden]{display:none}
+.pv-top{display:flex;align-items:center;justify-content:space-between;padding:14px 16px 8px}
+.pv-top b{font-size:18px;font-weight:600}
+.pv-top button,.pv-acoes button{all:unset;cursor:pointer;border-radius:8px}
+.pv-top button{width:34px;height:32px;display:grid;place-items:center;font-size:22px;color:var(--lima)}
+#pvBusca{margin:0 16px;padding:9px 12px;border-radius:10px;border:1px solid rgba(182,222,1,.35);background:rgba(0,0,0,.2);
+  color:var(--texto);font:500 15px "Saira",system-ui,sans-serif;outline:none}
+#pvBusca:focus{border-color:var(--lima)}
+.pv-acoes{display:flex;gap:6px;padding:10px 16px 6px;font-size:14px;color:var(--suave);align-items:center}
+.pv-acoes button{padding:4px 10px;color:var(--lima);font-weight:600;border:1px solid rgba(182,222,1,.35);border-radius:999px}
+.pv-acoes button:hover{background:rgba(242,252,0,.12)}
+.pv-acoes span{margin-left:auto}
+#pvLista{overflow-y:auto;padding:4px 8px 8px 16px;margin-right:6px;scrollbar-width:thin;scrollbar-color:rgba(182,222,1,.5) transparent}
+#pvLista label{display:grid;grid-template-columns:22px 1fr auto;align-items:center;gap:8px;padding:6px 6px;border-radius:8px;cursor:pointer;font-size:15px}
+#pvLista label:hover{background:rgba(242,252,0,.08)}
+#pvLista input{accent-color:#F2FC00;width:17px;height:17px;margin:0;cursor:pointer}
+#pvLista .l{font-size:13px;color:var(--suave);font-variant-numeric:tabular-nums}
+#pvLista label.sem .nm2{color:var(--suave)}
+#pvLista .vazio{color:var(--suave);font-size:14px;padding:8px 6px}
+.pv-rodape{padding:10px 16px 14px;border-top:1px solid rgba(182,222,1,.15);font-size:13px;color:var(--suave)}
+#cal{right:120px;top:164px;width:372px;z-index:10;background:#05301B;border:1px solid var(--linha);border-radius:14px;padding:14px 14px 12px;
   box-shadow:0 18px 44px rgba(0,0,0,.5)}
 #cal[hidden]{display:none}
 .cal-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}
@@ -236,6 +266,8 @@ td.c.zero{color:var(--apagado);font-weight:400}
   .nav button{width:46px;height:42px}
   #rotulo{min-width:0;flex:1}
   #cal{position:fixed;left:12px;right:12px;top:auto;bottom:calc(12px + env(safe-area-inset-bottom,0px));width:auto;z-index:40}
+  #btnVend{flex:1 1 100%;justify-content:center;height:44px}
+  #popVend{position:fixed;left:8px;right:8px;top:auto;bottom:calc(8px + env(safe-area-inset-bottom,0px));width:auto;max-height:78vh;z-index:40}
   /* KPIs em 2 colunas */
   #kpis{width:auto;height:auto;grid-template-columns:1fr 1fr;gap:10px}
   .kpi{padding:12px 14px;gap:6px;min-height:112px}
@@ -305,10 +337,23 @@ td.c.zero{color:var(--apagado);font-weight:400}
         <button id="rotulo" aria-haspopup="dialog" aria-expanded="false"></button>
         <button id="prox" aria-label="Próximo período">›</button>
       </div>
+    </div>
+    <div class="grupo">
       <div class="seg" id="fUF" role="group" aria-label="Estado">
         <button data-v="">BA e SE</button><button data-v="BA">BA</button><button data-v="SE">SE</button>
       </div>
+      <button id="btnVend" aria-haspopup="dialog" aria-expanded="false" title="Escolher quais vendedores aparecem no painel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.3-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M16.5 14.6c2.6.1 4.3 1.8 5 4.6"/></svg>
+        Vendedores <span class="qtd" id="vendQtd">todos</span></button>
     </div>
+  </div>
+
+  <div class="abs" id="popVend" role="dialog" aria-label="Filtrar vendedores" hidden>
+    <div class="pv-top"><b>Vendedores no painel</b><button id="pvFechar" aria-label="Fechar">×</button></div>
+    <input id="pvBusca" type="search" placeholder="Buscar vendedor" autocomplete="off">
+    <div class="pv-acoes"><button id="pvTodos" type="button">Marcar todos</button><button id="pvNenhum" type="button">Limpar</button><span id="pvConta"></span></div>
+    <div id="pvLista"></div>
+    <div class="pv-rodape">Litros no período escolhido. A escolha fica salva neste aparelho.</div>
   </div>
 
   <div class="abs" id="cal" role="dialog" aria-label="Escolher período" hidden></div>
@@ -576,7 +621,7 @@ function diasEntre(a,b){const out=[];for(let d=new Date(a);d<=b;d.setDate(d.getD
 /* ============ Cálculos (só volume) ============ */
 const SEGS=["tot","pouch","sint","drive"];
 const zero=()=>({tot:0,pouch:0,sint:0,drive:0});
-function calcular(D,per,ref,uf){
+function calcular(D,per,ref,uf,vendSel){
   const [a,b]=intervalo(per,ref), ka=chave(a), kb=chave(b);
   const refAnt=new Date(a);refAnt.setDate(refAnt.getDate()-1);const [pa,pb]=intervalo(per,refAnt), kpa=chave(pa), kpb=chave(pb);
   const [ea,eb]=per==="dia"?intervalo("semana",ref):[a,b], kea=chave(ea), keb=chave(eb);
@@ -586,6 +631,7 @@ function calcular(D,per,ref,uf){
   let semClassif=0;
   for(const [dt,vend,idCli,nped,cod,lit] of D.linhas){
     if(uf&&UF_DE.get(idCli)!==uf)continue;
+    if(vendSel&&!vendSel.has(vend))continue;
     const c=C[cod];
     const add=o=>{o.tot+=lit;if(c){if(c.pouch)o.pouch+=lit;if(c.sint)o.sint+=lit;if(c.drive)o.drive+=lit;}};
     const temPouch=c&&c.pouch&&lit>0;
@@ -607,7 +653,10 @@ function calcular(D,per,ref,uf){
 }
 
 /* ============ Estado ============ */
-const estado={per:"mes",ref:new Date(HOJE),uf:"",ordV:{k:"tot",dir:-1},ordC:{k:"tot",dir:-1}};
+const estado={per:"mes",ref:new Date(HOJE),uf:"",ordV:{k:"tot",dir:-1},ordC:{k:"tot",dir:-1},vend:null};  // vend: null = todos
+const CHAVE_VEND="painel-volume-vendedores";
+try{const v=JSON.parse(localStorage.getItem(CHAVE_VEND)||"null");if(Array.isArray(v))estado.vend=new Set(v);}catch(e){}
+function salvarVend(){try{estado.vend?localStorage.setItem(CHAVE_VEND,JSON.stringify([...estado.vend])):localStorage.removeItem(CHAVE_VEND);}catch(e){}}
 let DADOS=null;
 
 function prepararDados(D){
@@ -635,13 +684,15 @@ function barras(buckets,seg,altura,rotulos){
 
 function desenhar(){
   if(!DADOS)return;
-  const {per,ref,uf}=estado, D=calcular(DADOS,per,ref,uf), T=D.tot;
+  const {per,ref,uf}=estado, D=calcular(DADOS,per,ref,uf,estado.vend), T=D.tot;
   for(const [id,k] of [["fPeriodo","per"],["fUF","uf"]])
     $(id).querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===estado[k]));
   $("rotulo").textContent=rotulo(per,ref);
   palco.classList.toggle("modo-dia",per==="dia");
   $("prox").disabled=intervalo(per,ref)[1]>=HOJE;
-  $("subtit").textContent=`Faturamento · ${uf==="BA"?"Bahia":uf==="SE"?"Sergipe":"Bahia e Sergipe"}`;
+  $("subtit").textContent=`Faturamento · ${uf==="BA"?"Bahia":uf==="SE"?"Sergipe":"Bahia e Sergipe"}`+
+    (estado.vend?` · ${estado.vend.size} ${estado.vend.size===1?"vendedor":"vendedores"}`:"");
+  marcarBtnVend(); if(!$("popVend").hidden)listarVend();
 
   const [v1,v2]=volCurto(T.tot), pP=pct(T.pouch,T.tot);
   const card=(cls,nome,seg)=>{const [a,b]=volCurto(T[seg]);return `<div class="kpi ${cls}"><h3><i></i>${nome}</h3>
@@ -755,7 +806,7 @@ async function buscarRemoto(){
 
 /* ============ Calendário ============ */
 const cal=$("cal"); let vista=new Date();
-function abrirCal(){vista=new Date(estado.ref);vista.setDate(1);desenharCal();cal.hidden=false;$("rotulo").setAttribute("aria-expanded","true");
+function abrirCal(){if(typeof fecharVend==='function')fecharVend();vista=new Date(estado.ref);vista.setDate(1);desenharCal();cal.hidden=false;$("rotulo").setAttribute("aria-expanded","true");
   cal.querySelector("button.sel,.cal-dias button:not(:disabled)")?.focus();}
 function fecharCal(){cal.hidden=true;$("rotulo").setAttribute("aria-expanded","false");}
 function escolher(d){estado.ref=d>HOJE?new Date(HOJE):d;fecharCal();desenhar();$("rotulo").focus();}
@@ -805,6 +856,54 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!cal.hidden){fechar
 
 /* ============ Filtros ============ */
 $("fPeriodo").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;estado.per=b.dataset.v;fecharCal();desenhar();});
+/* ============ Filtro de vendedores (pop-up) ============ */
+const popVend=$("popVend");
+function todosVendedores(){return [...new Set(DADOS.linhas.map(l=>l[1]))].sort((a,b)=>
+  (/^Sem vendedor/.test(a)-/^Sem vendedor/.test(b))||a.localeCompare(b,"pt-BR"));}
+function marcarBtnVend(){
+  const tot=todosVendedores().length, n=estado.vend?estado.vend.size:tot;
+  $("btnVend").classList.toggle("ativo",!!estado.vend);
+  $("vendQtd").textContent=estado.vend?`${n} de ${tot}`:"todos";
+}
+function listarVend(){
+  const {per,ref,uf}=estado, lit=new Map();
+  for(const v of calcular(DADOS,per,ref,uf,null).vend)lit.set(v.nome,v.tot);       // litros sem o filtro de vendedor
+  const busca=norm($("pvBusca").value), todos=todosVendedores();
+  const lista=todos.filter(n=>!busca||norm(n).includes(busca));
+  $("pvLista").innerHTML=lista.length?lista.map(n=>{const on=!estado.vend||estado.vend.has(n),l=lit.get(n)||0;
+    return `<label class="${l?"":"sem"}"><input type="checkbox" value="${esc(n)}" ${on?"checked":""}>
+      <span class="nm2">${esc(n)}</span><span class="l">${l?nf(l)+" L":"—"}</span></label>`;}).join("")
+    :'<div class="vazio">Nenhum vendedor com esse nome.</div>';
+  const n=estado.vend?estado.vend.size:todos.length;
+  $("pvConta").textContent=`${n} de ${todos.length}`;
+}
+function aplicarVend(sel){
+  const todos=todosVendedores();
+  estado.vend=(!sel||sel.size===todos.length&&todos.every(n=>sel.has(n)))?null:sel;   // todos marcados = sem filtro
+  salvarVend();desenhar();
+}
+function abrirVend(){fecharCal();$("pvBusca").value="";listarVend();popVend.hidden=false;$("btnVend").setAttribute("aria-expanded","true");
+  if(!CELULAR.matches)$("pvBusca").focus();}
+function fecharVend(){if(popVend.hidden)return;popVend.hidden=true;$("btnVend").setAttribute("aria-expanded","false");}
+$("btnVend").addEventListener("click",e=>{e.stopPropagation();popVend.hidden?abrirVend():fecharVend();});
+popVend.addEventListener("click",e=>e.stopPropagation());
+$("pvFechar").addEventListener("click",()=>{fecharVend();$("btnVend").focus();});
+$("pvBusca").addEventListener("input",listarVend);
+$("pvTodos").addEventListener("click",()=>{
+  const busca=norm($("pvBusca").value);
+  if(!busca)return aplicarVend(null);
+  const sel=new Set(estado.vend||todosVendedores());todosVendedores().filter(n=>norm(n).includes(busca)).forEach(n=>sel.add(n));aplicarVend(sel);});
+$("pvNenhum").addEventListener("click",()=>{
+  const busca=norm($("pvBusca").value);
+  if(!busca)return aplicarVend(new Set());
+  const sel=new Set(estado.vend||todosVendedores());todosVendedores().filter(n=>norm(n).includes(busca)).forEach(n=>sel.delete(n));aplicarVend(sel);});
+$("pvLista").addEventListener("change",e=>{
+  if(e.target.type!=="checkbox")return;
+  const sel=new Set(estado.vend||todosVendedores());
+  e.target.checked?sel.add(e.target.value):sel.delete(e.target.value);aplicarVend(sel);});
+document.addEventListener("click",()=>fecharVend());
+document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!popVend.hidden){fecharVend();$("btnVend").focus();}});
+
 $("fUF").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;estado.uf=b.dataset.v;desenhar();});
 /* Ordenar rankings: 1º clique = maior primeiro, 2º clique = menor primeiro */
 for(const [tab,ch] of [["vendedores","ordV"],["clientes","ordC"]])

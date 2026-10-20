@@ -366,7 +366,8 @@ const CONFIG = {
   /* Nome dos vendedores pelo "Empregado de Vendas" da consulta. Quem não estiver aqui aparece como
      "Vendedor 5000xxxx"; empregado 0 aparece como "Sem vendedor". */
   VENDEDORES: {
-    "50000054":"Alberto Sardeiro da Silva",  "50000055":"Tiago",  "50000325":"Alexsandro Silva",  "50000056":"Luis Fernando Sousa Silva", "50000060":"Diego Berguer",
+    "50000050":"Davidson Valmir Marques de Andrade", "50000064":"Luis Fernando Arnout Borges", "50000355":"Gilson Nascimento",
+    "50000054":"Alberto Sardeiro da Silva",  "50000055":"Tiago",  "50000325":"Alexsandro Silva",  "50000328":"Helaine Oliveira",  "50000400":"Bruno Cesar Gomes de Carvalho",  "50000056":"Luis Fernando Sousa Silva", "50000060":"Diego Berguer",
     "50000062":"Ivis Rafael Silva",          "50000067":"Victor Canilha",            "50000076":"André Martins Lima",
     "50000079":"Washington De Jesus Santos", "50000080":"Laís Campos",               "50000082":"Rosileide Da Silva Santos",
     "50000083":"Cleiton Barbosa de Santana", "50000084":"Reinaldo Siqueira Santos Júnior", "50000086":"Gilmar Nantes de Santana",
@@ -552,7 +553,7 @@ function salvarLocal(){if(ONLINE)return;try{localStorage.setItem(CHAVE_LS,JSON.s
 function lerLocal(){if(ONLINE)return null;try{const s=localStorage.getItem(CHAVE_LS);return s?JSON.parse(s):null;}catch(e){return null;}}
 
 /* ============ Períodos ============ */
-function inicioSemana(d){const x=new Date(d);x.setDate(x.getDate()-(x.getDay()+6)%7);return x;}
+function inicioSemana(d){const x=new Date(d);x.setDate(x.getDate()-x.getDay());return x;}   // semana de domingo a sábado
 function intervalo(per,ref){
   const a=new Date(ref);
   if(per==="dia")return [a,new Date(a)];
@@ -774,9 +775,9 @@ function desenharCal(){
     const proxOk=new Date(y,m+1,1)<=HOJE;
     cal.innerHTML=`<div class="cal-top"><button data-nav="-1" aria-label="Mês anterior">‹</button><b>${MESX[m]} de ${y}</b>
       <button data-nav="1" aria-label="Próximo mês" ${proxOk?"":"disabled"}>›</button></div>
-      <table class="cal-dias ${per==="semana"?"modo-semana":""}"><thead><tr>${["S","T","Q","Q","S","S","D"].map(x=>`<th>${x}</th>`).join("")}</tr></thead>
+      <table class="cal-dias ${per==="semana"?"modo-semana":""}"><thead><tr>${["D","S","T","Q","Q","S","S"].map(x=>`<th>${x}</th>`).join("")}</tr></thead>
       <tbody>${linhas}</tbody></table>
-      <p class="cal-dica">${per==="semana"?"Clique em qualquer dia para escolher a semana inteira (segunda a domingo)":"Escolha o dia · o pontinho marca dias com faturamento"}</p>`;
+      <p class="cal-dica">${per==="semana"?"Clique em qualquer dia para escolher a semana inteira (domingo a sábado)":"Escolha o dia · o pontinho marca dias com faturamento"}</p>`;
   } else if(per==="mes"){
     const y=vista.getFullYear();
     cal.innerHTML=`<div class="cal-top"><button data-nav="-12" aria-label="Ano anterior">‹</button><b>${y}</b>

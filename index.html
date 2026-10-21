@@ -53,7 +53,6 @@ button:focus-visible,select:focus-visible{outline:3px solid var(--lima);outline-
 .sel-wrap.ativo{border-color:var(--lima);box-shadow:0 0 0 1px var(--lima) inset}
 
 /* Indicadores */
-#kpis{left:120px;top:214px;width:1680px;height:142px;display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
 .kpi{background:var(--painel);border:1px solid rgba(182,222,1,.35);border-radius:14px;padding:16px 20px;
   display:flex;flex-direction:column;justify-content:space-between;backdrop-filter:blur(2px)}
 .kpi h3{margin:0;font-size:17px;font-weight:500;color:var(--suave)}
@@ -100,13 +99,8 @@ th.ord.ativo button{font-weight:700;text-decoration:underline;text-underline-off
 th.ord.ativo .seta{opacity:1}
 td.uf{font-size:13px;color:var(--suave);text-align:center}
 td.vd{font-size:13px;color:var(--suave);max-width:170px;overflow:hidden;text-overflow:ellipsis}
-#clientes td.nm{max-width:300px}
 td.cob{font-size:13px;color:var(--suave)} td.cob b{color:var(--pouch);font-size:14px} td.cob.zero b{color:var(--apagado);font-weight:400}
 #marca{right:124px;top:58px;height:44px;width:auto}
-#segmentos{left:120px;top:658px;width:1060px;height:282px;padding:0;
-  clip-path:polygon(0 0,100% 0,100% 100%,157px 100%,0 125px)}
-#vendedores{left:1200px;top:378px;width:600px;height:562px}
-#vendedores td.nm{max-width:136px}
 
 /* Barras */
 .grafico{position:absolute;display:flex;align-items:flex-end;gap:6px}
@@ -243,6 +237,54 @@ td.c.zero{color:var(--apagado);font-weight:400}
 .cal-grade button{height:48px;line-height:48px}
 .cal-dica{margin:8px 2px 0;font-size:13px;color:var(--suave)}
 
+/* =================== ABAS =================== */
+#abas{left:806px;top:114px}
+#abas button{font-size:17px;font-weight:700;padding:7px 22px}
+.pagina[hidden]{display:none!important}
+.kpis{left:120px;top:214px;width:1680px;height:142px;display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
+.pain-tl{left:120px;top:378px;width:1060px;height:262px}
+.pain-bl{left:120px;top:658px;width:1060px;height:282px;padding:0;clip-path:polygon(0 0,100% 0,100% 100%,157px 100%,0 125px)}
+.pain-r{left:1200px;top:378px;width:600px;height:562px}
+.cabeca{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.seg.mini{padding:2px}
+.seg.mini button{font-size:13px;padding:3px 12px}
+.intro{position:absolute;left:24px;top:18px;width:150px}
+.intro h2{font-size:21px;line-height:1.15}
+.intro p{font-size:14px;color:var(--suave);margin:8px 0 0;line-height:1.35}
+.corpo-bl{position:absolute;left:190px;right:24px;top:16px;bottom:12px}
+.svgbox{position:absolute;left:16px;right:16px;top:76px;bottom:8px}
+.corpo-bl .svgbox{left:0;right:0;top:0;bottom:0}
+.svgbox svg{display:block;overflow:visible}
+.leg{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:13px;color:var(--suave)}
+.leg span::before{content:"";display:inline-block;width:14px;height:3px;border-radius:2px;background:var(--cor);vertical-align:middle;margin-right:6px}
+.leg .lg-a{--cor:var(--lima)} .leg .lg-b::before{background:none;border-top:2px dashed var(--suave);height:0}
+#ritmoNota .res{display:block;margin-bottom:10px;font-size:15px;color:var(--texto)}
+#ritmoNota .leg{flex-direction:column}
+#ritmoNota .leg span:not([class])::before{display:none}
+#evoMed{font-size:13px;color:var(--lima)}
+#evoMed:not(:empty)::before{content:"";display:inline-block;width:16px;border-top:2px dashed var(--lima);vertical-align:middle;margin-right:6px}
+.media-linha{position:absolute;left:0;right:0;border-top:2px dashed rgba(242,252,0,.65);pointer-events:none}
+#evolucao .grafico{top:78px}
+.rolagem.baixo{top:96px}
+.filtro-tab{margin-top:10px;display:inline-flex}
+td.var{font-size:13px} td.var .zero{color:var(--apagado)}
+td.nm small{display:block;font-size:12px;color:var(--suave);line-height:1.15;overflow:hidden;text-overflow:ellipsis}
+td.nm.prod,td.nm.cli2{max-width:250px;}
+#rkProd td.nm.prod{max-width:205px}
+td.nm.prod,td.nm.cli2{line-height:1.2;padding-top:5px;padding-bottom:5px}
+td.nm.eh-pouch{color:var(--pouch)}
+.tag{display:inline-block;width:8px;height:8px;border-radius:2px;background:var(--cor);margin-left:6px;vertical-align:middle}
+#rkCli td.nm{max-width:300px}
+#rkVend td.nm{max-width:220px}
+.kpi.alerta .v{color:var(--desce)}
+.r1{--cor:var(--sobe)} .r2{--cor:var(--lima)} .r3{--cor:var(--pouch)} .r4{--cor:var(--desce)}
+#recLinhas{display:flex;flex-direction:column;justify-content:space-evenly}
+#recLinhas .linha{grid-template-columns:140px 1fr 260px}
+#recLinhas .linha .trilho{height:22px;border-radius:6px}
+#recLinhas .linha .trilho i{border-radius:6px}
+#recLinhas .linha .trilho::after{display:none}
+#recLinhas .linha .val small{margin:0 0 0 4px}
+
 /* =================== CELULAR / TELA ESTREITA =================== */
 #topoM{display:none}
 @media (max-width:900px){
@@ -269,7 +311,6 @@ td.c.zero{color:var(--apagado);font-weight:400}
   #btnVend{flex:1 1 100%;justify-content:center;height:44px}
   #popVend{position:fixed;left:8px;right:8px;top:auto;bottom:calc(8px + env(safe-area-inset-bottom,0px));width:auto;max-height:78vh;z-index:40}
   /* KPIs em 2 colunas */
-  #kpis{width:auto;height:auto;grid-template-columns:1fr 1fr;gap:10px}
   .kpi{padding:12px 14px;gap:6px;min-height:112px}
   .kpi h3{font-size:14px}
   .kpi .v{font-size:32px}
@@ -280,8 +321,6 @@ td.c.zero{color:var(--apagado);font-weight:400}
   /* painéis empilhados */
   .painel{width:auto!important;height:auto!important;padding:14px 14px 12px;background:var(--painel-forte)}
   .painel h2{font-size:18px}
-  #segmentos{order:3;clip-path:none;padding:14px}
-  #vendedores{order:4} #clientes{order:5}
   #segIntro{position:static;width:auto;margin-bottom:10px}
   #segIntro h2{font-size:18px} #segIntro p{margin-top:2px}
   #foco{position:static}
@@ -304,10 +343,30 @@ td.c.zero{color:var(--apagado);font-weight:400}
   /* nome do vendedor/cliente fica parado ao rolar a tabela para o lado */
   td.nm,th:nth-child(2){position:sticky;left:0;background:#032817;z-index:1}
   .rolagem thead th:nth-child(2){z-index:2}
-  #vendedores td.nm{max-width:112px}
-  #clientes td.nm{max-width:150px}
   /* no celular, a tabela de clientes esconde UF, vendedor e pedidos para caber */
-  #clientes th:nth-child(4),#clientes td:nth-child(4),#clientes th:nth-child(5),#clientes td:nth-child(5),#clientes th:nth-child(6),#clientes td:nth-child(6){display:none}
+  /* abas e páginas no celular */
+  #abas{position:sticky;top:0;z-index:30;display:flex;box-shadow:0 6px 18px rgba(0,0,0,.35)}
+  #abas button{flex:1;text-align:center;padding:9px 6px;font-size:16px}
+  .pagina{display:flex;flex-direction:column;gap:14px}
+  .kpis{width:auto;height:auto;grid-template-columns:1fr 1fr;gap:10px}
+  .kpis .kpi:last-child:nth-child(odd){grid-column:1/-1}
+  .pain-bl{clip-path:none;padding:14px!important}
+  .intro{position:static;width:auto;margin-bottom:10px}
+  .intro h2{font-size:18px} .intro p{margin-top:2px}
+  .corpo-bl{position:static}
+  .svgbox{position:relative;left:auto;right:auto;top:auto;bottom:auto;height:220px;margin-top:10px}
+  .corpo-bl .svgbox{height:200px}
+  #evolucao .grafico{position:relative;left:auto;right:auto;top:auto;bottom:auto;height:180px;margin-top:10px;gap:2px}
+  #evolucao .col .lb{font-size:10px}
+  .cabeca{flex-wrap:wrap}
+  .rolagem.baixo{top:auto}
+  #recLinhas{gap:12px}
+  #recLinhas .linha{grid-template-columns:auto 1fr}
+  #rkCli th:nth-child(4),#rkCli td:nth-child(4),#rkCli th:nth-child(5),#rkCli td:nth-child(5),#rkCli th:nth-child(6),#rkCli td:nth-child(6){display:none}
+  #rkVend td.nm{max-width:130px}
+  td.nm.prod,td.nm.cli2{max-width:170px}
+  #rkCli td.nm{max-width:150px}
+  #ritmoNota .leg{flex-direction:row}
   #rodape{width:auto;text-align:center;order:6}
   #rodape:empty{display:none}
   #aviso{position:fixed;left:12px;right:12px;transform:none;top:auto;bottom:20px;text-align:center}
@@ -324,6 +383,10 @@ td.c.zero{color:var(--apagado);font-weight:400}
     <p><span id="subtit">Vendas · Bahia e Sergipe</span>
       <button id="btnCsv" title="Escolha as planilhas exportadas do SAP, ou arraste para a tela">Carregar planilhas</button></p>
     <input type="file" id="arquivo" accept=".xlsx,.csv" multiple hidden>
+  </div>
+
+  <div class="seg abs" id="abas" role="tablist" aria-label="Páginas do painel">
+    <button data-v="geral" role="tab">Geral</button><button data-v="produto" role="tab">Produto</button><button data-v="clientes" role="tab">Clientes</button>
   </div>
 
   <div class="abs" id="filtros">
@@ -357,26 +420,82 @@ td.c.zero{color:var(--apagado);font-weight:400}
   </div>
 
   <div class="abs" id="cal" role="dialog" aria-label="Escolher período" hidden></div>
-  <div class="abs" id="kpis"></div>
+  <!-- ===================== GERAL ===================== -->
+  <div class="pagina" id="pg-geral" role="tabpanel" aria-label="Geral">
+    <div class="abs kpis" id="kpisG"></div>
+    <section class="abs painel pain-tl" id="evolucao">
+      <div class="cabeca"><h2 id="evoTit">Evolução do volume</h2><span id="evoMed"></span></div>
+      <p class="nota" id="evoNota"></p>
+      <div class="grafico" id="evoGraf"></div>
+    </section>
+    <section class="abs painel pain-bl" id="ritmo">
+      <div class="intro"><h2>Ritmo acumulado</h2><p id="ritmoNota"></p></div>
+      <div class="corpo-bl"><div class="svgbox" id="ritmoSvg"></div></div>
+    </section>
+    <section class="abs painel pain-r" id="rkVend">
+      <h2>Ranking de vendedores</h2>
+      <div class="rolagem"><table><thead><tr><th></th><th>Vendedor</th>
+        <th class="num ord" data-ord="tot"><button type="button">Total (L)<span class="seta"></span></button></th>
+        <th class="num ord" data-ord="var" title="Variação contra o período de comparação"><button type="button">Var.<span class="seta"></span></button></th>
+        <th class="num ord" data-ord="notas"><button type="button">Notas<span class="seta"></span></button></th>
+        <th class="num ord" data-ord="clis"><button type="button">Clientes<span class="seta"></span></button></th></tr></thead>
+        <tbody id="tbVend"></tbody></table></div>
+    </section>
+  </div>
 
-  <section class="abs painel" id="clientes">
-    <h2>Ranking de clientes por volume</h2>
-    <div class="rolagem"><table><thead><tr><th></th><th>Cliente</th><th>ID SAP</th><th>UF</th><th>Vendedor</th><th class="num">Notas</th>
-      <th class="num ord " data-ord="tot"><button type="button">Total (L)<span class="seta"></span></button></th><th class="num ord pouch" data-ord="pouch"><button type="button">Pouch<span class="seta"></span></button></th><th class="num ord sint" data-ord="sint"><button type="button">Sintético<span class="seta"></span></button></th><th class="num ord drive" data-ord="drive"><button type="button">Driveline<span class="seta"></span></button></th></tr></thead>
-      <tbody id="tbCli"></tbody></table></div>
-  </section>
+  <!-- ===================== PRODUTO ===================== -->
+  <div class="pagina" id="pg-produto" role="tabpanel" aria-label="Produto" hidden>
+    <div class="abs kpis" id="kpisP"></div>
+    <section class="abs painel pain-tl" id="epoca">
+      <div class="cabeca"><h2>Volume por época</h2><span class="leg" id="epocaLeg"></span>
+        <div class="seg mini" id="epocaModo" role="group" aria-label="Medida"><button data-v="l">Litros</button><button data-v="pct">% do total</button></div></div>
+      <p class="nota" id="epocaNota"></p>
+      <div class="svgbox" id="epocaSvg"></div>
+    </section>
+    <section class="abs painel pain-bl" id="segmentos">
+      <div id="segIntro" class="intro"><h2>Cobertura das notas</h2><p id="focoNota"></p></div>
+      <div id="foco" class="so-comp"><div id="comp"></div></div>
+    </section>
+    <section class="abs painel pain-r" id="rkProd">
+      <h2>Ranking de produtos</h2>
+      <div class="seg mini filtro-tab" id="prodFiltro" role="group" aria-label="Linha">
+        <button data-v="">Todos</button><button data-v="pouch">Pouch</button><button data-v="sint">Sintético</button><button data-v="drive">Driveline</button></div>
+      <div class="rolagem baixo"><table><thead><tr><th></th><th>Produto</th>
+        <th class="num ord" data-ord="tot"><button type="button">Total (L)<span class="seta"></span></button></th>
+        <th class="num ord" data-ord="var"><button type="button">Var.<span class="seta"></span></button></th>
+        <th class="num ord" data-ord="notas"><button type="button">Notas<span class="seta"></span></button></th>
+        <th class="num ord" data-ord="clis"><button type="button">Clientes<span class="seta"></span></button></th></tr></thead>
+        <tbody id="tbProd"></tbody></table></div>
+    </section>
+  </div>
 
-  <section class="abs painel" id="segmentos">
-    <div id="segIntro"><h2>Cobertura das notas</h2><p id="focoNota"></p></div>
-    <div id="foco" class="so-comp"><div id="comp"></div></div>
-  </section>
-
-  <section class="abs painel" id="vendedores">
-    <h2>Ranking de vendedores por volume</h2>
-    <div class="rolagem"><table><thead><tr><th></th><th>Vendedor</th><th class="num ord " data-ord="tot"><button type="button">Total (L)<span class="seta"></span></button></th><th class="num ord pouch" data-ord="pouch"><button type="button">Pouch<span class="seta"></span></button></th>
-      <th class="num ord sint" data-ord="sint"><button type="button">Sintético<span class="seta"></span></button></th><th class="num ord drive" data-ord="drive"><button type="button">Driveline<span class="seta"></span></button></th><th class="num pouch" title="Notas com pouch / total de notas">Cob. pouch</th></tr></thead>
-      <tbody id="tbVend"></tbody></table></div>
-  </section>
+  <!-- ===================== CLIENTES ===================== -->
+  <div class="pagina" id="pg-clientes" role="tabpanel" aria-label="Clientes" hidden>
+    <div class="abs kpis" id="kpisC"></div>
+    <section class="abs painel pain-tl" id="rkCli">
+      <h2>Ranking de clientes por volume</h2>
+      <div class="rolagem"><table><thead><tr><th></th><th>Cliente</th><th>ID SAP</th><th>UF</th><th>Vendedor</th><th class="num">Notas</th>
+        <th class="num ord" data-ord="tot"><button type="button">Total (L)<span class="seta"></span></button></th>
+        <th class="num ord pouch" data-ord="pouch"><button type="button">Pouch<span class="seta"></span></button></th>
+        <th class="num ord sint" data-ord="sint"><button type="button">Sintético<span class="seta"></span></button></th>
+        <th class="num ord drive" data-ord="drive"><button type="button">Driveline<span class="seta"></span></button></th></tr></thead>
+        <tbody id="tbCli"></tbody></table></div>
+    </section>
+    <section class="abs painel pain-bl" id="recencia">
+      <div class="intro"><h2>Recência</h2><p id="recNota"></p></div>
+      <div class="corpo-bl" id="recLinhas"></div>
+    </section>
+    <section class="abs painel pain-r" id="rkParados">
+      <div class="cabeca"><h2>Pararam de comprar</h2>
+        <div class="seg mini" id="paradoDias" role="group" aria-label="Dias sem comprar"><button data-v="30">30 dias</button><button data-v="60">60</button><button data-v="90">90</button></div></div>
+      <p class="nota" id="paradoNota"></p>
+      <div class="rolagem baixo"><table><thead><tr><th></th><th>Cliente</th>
+        <th class="num ord" data-ord="ult"><button type="button">Última compra<span class="seta"></span></button></th>
+        <th class="num ord" data-ord="dias"><button type="button">Dias<span class="seta"></span></button></th>
+        <th class="num ord" data-ord="med" title="Média mensal enquanto comprava"><button type="button">L/mês<span class="seta"></span></button></th></tr></thead>
+        <tbody id="tbParados"></tbody></table></div>
+    </section>
+  </div>
 
   <img class="abs" id="marca" alt="CG Lub" src="data:image/png;base64,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">
   <div class="abs" id="rodape"></div>
@@ -618,126 +737,331 @@ function rotulo(per,ref){const [a,b]=intervalo(per,ref);
   return String(a.getFullYear());}
 function diasEntre(a,b){const out=[];for(let d=new Date(a);d<=b;d.setDate(d.getDate()+1))out.push(new Date(d));return out;}
 
-/* ============ Cálculos (só volume) ============ */
-const SEGS=["tot","pouch","sint","drive"];
+/* ============ Cálculos ============ */
 const zero=()=>({tot:0,pouch:0,sint:0,drive:0});
-function calcular(D,per,ref,uf,vendSel){
-  const [a,b]=intervalo(per,ref), ka=chave(a), kb=chave(b);
-  const refAnt=new Date(a);refAnt.setDate(refAnt.getDate()-1);const [pa,pb]=intervalo(per,refAnt), kpa=chave(pa), kpb=chave(pb);
-  const [ea,eb]=per==="dia"?intervalo("semana",ref):[a,b], kea=chave(ea), keb=chave(eb);
-  const C=D._classe, tot=zero(), ant=zero(), porB=new Map(), porVend=new Map(), porCli=new Map(), ped=new Set(), cli=new Set(), pedPouch=new Set();
-  const cob={pouch:[new Set(),new Set()],sint:[new Set(),new Set()],drive:[new Set(),new Set()]}; // [pedidos, clientes]
-  const pedAnt=new Set(), pedPouchAnt=new Set();
-  let semClassif=0;
-  for(const [dt,vend,idCli,nped,cod,lit] of D.linhas){
-    if(uf&&UF_DE.get(idCli)!==uf)continue;
-    if(vendSel&&!vendSel.has(vend))continue;
+const somaDias=(k,n)=>{const d=deChave(k);d.setDate(d.getDate()+n);return chave(d);};
+const difDias=(a,b)=>Math.round((deChave(b)-deChave(a))/864e5);
+const minK=(a,b)=>a<b?a:b;
+const fmtData=(k,curto)=>k?`${k.slice(8,10)}/${k.slice(5,7)}/${curto?k.slice(2,4):k.slice(0,4)}`:"";
+const mesesEntre=(a,b)=>(+b.slice(0,4)-+a.slice(0,4))*12+(+b.slice(5,7)-+a.slice(5,7))+1;
+const diasNoMes=k=>new Date(+k.slice(0,4),+k.slice(5,7),0).getDate();
+
+/* linhas: [data, vendedor, id_cliente, fatura, cod_produto, litros] — já com os filtros de UF e vendedor */
+function linhasFiltradas(D,uf,vendSel){return D.linhas.filter(l=>(!uf||UF_DE.get(l[2])===uf)&&(!vendSel||vendSel.has(l[1])));}
+
+/* soma tudo de um intervalo de datas numa passada só */
+function acumular(L,C,ka,kb){
+  const r={...zero(),notas:new Set(),clis:new Set(),dias:new Set(),prods:new Set(),semClassif:0,
+    vend:new Map(),cli:new Map(),prod:new Map(),cob:{pouch:[new Set(),new Set()],sint:[new Set(),new Set()],drive:[new Set(),new Set()]}};
+  for(const [dt,vend,idCli,nota,cod,lit] of L){
+    if(dt<ka||dt>kb)continue;
     const c=C[cod];
     const add=o=>{o.tot+=lit;if(c){if(c.pouch)o.pouch+=lit;if(c.sint)o.sint+=lit;if(c.drive)o.drive+=lit;}};
-    const temPouch=c&&c.pouch&&lit>0;
-    if(dt>=ka&&dt<=kb){add(tot);ped.add(nped);cli.add(idCli);if(temPouch)pedPouch.add(nped);if(!c)semClassif+=lit;
-      if(c&&lit>0)for(const k of ["pouch","sint","drive"])if(c[k]){cob[k][0].add(nped);cob[k][1].add(idCli);}
-      let v=porVend.get(vend);if(!v){v={...zero(),ped:new Set(),pp:new Set()};porVend.set(vend,v);}add(v);v.ped.add(nped);if(temPouch)v.pp.add(nped);
-      let k=porCli.get(idCli);if(!k){k={...zero(),ped:new Set(),vend:new Set()};porCli.set(idCli,k);}add(k);k.ped.add(nped);k.vend.add(vend);}
-    else if(dt>=kpa&&dt<=kpb){add(ant);pedAnt.add(nped);if(temPouch)pedPouchAnt.add(nped);}
-    if(dt>=kea&&dt<=keb){const k=per==="ano"?dt.slice(0,7):dt;let o=porB.get(k);if(!o){o=zero();porB.set(k,o);}add(o);}
+    add(r);r.notas.add(nota);r.clis.add(idCli);r.dias.add(dt);if(lit>0)r.prods.add(cod);if(!c)r.semClassif+=lit;
+    if(c&&lit>0)for(const k of ["pouch","sint","drive"])if(c[k]){r.cob[k][0].add(nota);r.cob[k][1].add(idCli);}
+    let v=r.vend.get(vend);if(!v){v={...zero(),notas:new Set(),clis:new Set(),pp:new Set()};r.vend.set(vend,v);}
+    add(v);v.notas.add(nota);v.clis.add(idCli);if(c&&c.pouch&&lit>0)v.pp.add(nota);
+    let k=r.cli.get(idCli);if(!k){k={...zero(),notas:new Set(),vend:new Set()};r.cli.set(idCli,k);}
+    add(k);k.notas.add(nota);k.vend.add(vend);
+    let p=r.prod.get(cod);if(!p){p={...zero(),notas:new Set(),clis:new Set()};r.prod.set(cod,p);}
+    add(p);p.notas.add(nota);p.clis.add(idCli);
   }
-  let buckets;
-  if(per==="ano")buckets=MES.map((m,i)=>({lb:m,atual:a.getFullYear()===HOJE.getFullYear()&&i===HOJE.getMonth(),
-      ...(porB.get(`${a.getFullYear()}-${String(i+1).padStart(2,"0")}`)||zero())}));
-  else buckets=diasEntre(ea,eb).map(d=>({lb:per==="mes"?String(d.getDate()):`${SEM[d.getDay()]} ${d.getDate()}`,
-      dia:d.getDate(),atual:per==="dia"?mesmoDia(d,ref):mesmoDia(d,HOJE),...(porB.get(chave(d))||zero())}));
-  const vend=[...porVend].map(([nome,o])=>({nome,...o})).sort((x,y)=>y.tot-x.tot);
-  const clis=[...porCli].map(([id,o])=>({id,nome:D.clientes[id]||"Cliente "+id,fant:D.fantasia?.[id]||"",uf:UF_DE.get(id)||"",...o})).sort((x,y)=>y.tot-x.tot);
-  return {tot,ant,buckets,vend,clis,ped:ped.size,cli:cli.size,pedPouch:pedPouch.size,cob:Object.fromEntries(Object.entries(cob).map(([k,[p,c]])=>[k,{ped:p.size,cli:c.size}])),pedAnt:pedAnt.size,pedPouchAnt:pedPouchAnt.size,semClassif};
+  return r;
+}
+
+/* período escolhido + período de comparação.
+   Período em andamento (ex.: 1 a 21 de out) compara com o MESMO trecho do anterior (1 a 21 de set).
+   Dia compara com o mesmo dia da semana anterior. */
+function janelas(per,ref){
+  const [a,b]=intervalo(per,ref), ka=chave(a), kb=chave(b);
+  const refAnt=new Date(a);refAnt.setDate(refAnt.getDate()-1);
+  let [pa,pb]=intervalo(per,refAnt), kpa=chave(pa), kpb=chave(pb), txt="vs período anterior";
+  const ult=DADOS?._ultimo||"";
+  if(per==="dia"){kpa=kpb=somaDias(ka,-7);txt="vs mesmo dia da sem. passada";}
+  else if(ult&&ult>=ka&&ult<kb){const lim=somaDias(kpa,difDias(ka,ult));if(lim<kpb)kpb=lim;txt="vs mesmo trecho anterior";}
+  return {ka,kb,kpa,kpb,txt,fim:ult?minK(kb,ult):kb};
+}
+
+/* usado pelo pop-up de vendedores: litros de cada vendedor no período */
+function calcular(D,per,ref,uf,vendSel){
+  const j=janelas(per,ref), r=acumular(linhasFiltradas(D,uf,vendSel),D._classe,j.ka,j.kb);
+  return {tot:r,vend:[...r.vend].map(([nome,o])=>({nome,tot:o.tot})).sort((x,y)=>y.tot-x.tot)};
 }
 
 /* ============ Estado ============ */
-const estado={per:"mes",ref:new Date(HOJE),uf:"",ordV:{k:"tot",dir:-1},ordC:{k:"tot",dir:-1},vend:null};  // vend: null = todos
+const ABAS=["geral","produto","clientes"];
+const estado={per:"mes",ref:new Date(HOJE),uf:"",vend:null,aba:"geral",ord:{},epocaModo:"l",prodFiltro:"",paradoDias:"60"};
+const ORD_PADRAO={rkParados:{k:"med",dir:-1}};
+(()=>{const h=location.hash.replace("#","");let a=ABAS.includes(h)?h:"";
+  if(!a)try{a=localStorage.getItem("painel-volume-aba")||"";}catch(e){}
+  if(ABAS.includes(a))estado.aba=a;})();
 const CHAVE_VEND="painel-volume-vendedores";
 try{const v=JSON.parse(localStorage.getItem(CHAVE_VEND)||"null");if(Array.isArray(v))estado.vend=new Set(v);}catch(e){}
 function salvarVend(){try{estado.vend?localStorage.setItem(CHAVE_VEND,JSON.stringify([...estado.vend])):localStorage.removeItem(CHAVE_VEND);}catch(e){}}
 let DADOS=null;
 
 function prepararDados(D){
-  D._classe={}; const cats=new Set();
+  D._classe={};
   for(const [cod,txt] of Object.entries(D.produtos)){const r=classificar(cod,txt);
-    D._classe[cod]=r?{cat:String(r[0]).trim()||SEM_CLASSIF,pouch:sim(r[1]),sint:/^sint[eé]tico$/i.test(String(r[2]).trim()),drive:sim(r[3])}:null;
-    cats.add(r?(String(r[0]).trim()||SEM_CLASSIF):SEM_CLASSIF);}
-  D._ultimo=D.linhas.reduce((m,l)=>l[0]>m?l[0]:m,""); D._dias=new Set(D.linhas.map(l=>l[0]));
+    D._classe[cod]=r?{cat:String(r[0]).trim()||SEM_CLASSIF,pouch:sim(r[1]),sint:/^sint[eé]tico$/i.test(String(r[2]).trim()),drive:sim(r[3])}:null;}
+  let ult="",prim="";for(const l of D.linhas){if(l[0]>ult)ult=l[0];if(!prim||l[0]<prim)prim=l[0];}
+  D._ultimo=ult;D._primeiro=prim;D._dias=new Set(D.linhas.map(l=>l[0]));
 }
 function irParaUltimo(){ if(DADOS?._ultimo){const d=deChave(DADOS._ultimo);estado.ref=d>HOJE?new Date(HOJE):d;} }
 
-function delta(atual,ant,curto){if(!ant)return curto?"":'<span>sem base de comparação</span>';const p=(atual/ant-1)*100;
-  return `<b class="${p>=0?"sobe":"desce"}">${p>=0?"▲":"▼"} ${nf(Math.abs(p),1)}%</b>${curto?"":" vs período anterior"}`;}
+/* ============ Pedaços de desenho ============ */
 const pct=(v,t)=>t?v/t*100:0;
 const pctTxt=p=>nf(p,p>0&&p<10?1:0)+"%";
+function varPct(atual,ant){return ant?(atual/ant-1)*100:null;}
+function seta(p){return p==null?"":`<b class="${p>=0?"sobe":"desce"}">${p>=0?"▲":"▼"} ${nf(Math.abs(p),1)}%</b>`;}
+function delta(atual,ant,txt){const p=varPct(atual,ant);return p==null?"<span>sem base de comparação</span>":`${seta(p)} ${txt}`;}
+const vHtml=v=>{const [a,b]=volCurto(v);return `${a}<small>${b}</small>`;};
+function kpi(o){return `<div class="kpi ${o.cls||""}"><h3>${o.cor?"<i></i>":""}${o.t}</h3><div class="v">${o.v}</div>
+  ${o.med!=null?`<div class="medidor"><i style="width:${Math.min(100,o.med)}%"></i></div>`:""}<div class="d">${o.d||""}</div></div>`;}
+const cel=(v,cls)=>`<td class="num c ${v?cls:"zero"}">${v?nf(v):"—"}</td>`;
+const nomeProduto=cod=>String(DADOS.produtos[cod]||cod).replace(/\s*-\s*\d{6,}\s*$/,"");
 
-function barras(buckets,seg,altura,rotulos){
-  const max=Math.max(...buckets.map(b=>b[seg]),1), poucos=buckets.length<=12;
-  return buckets.map(b=>{
-    const lb=rotulos==="esparso"?(buckets.length>12?((b.dia===1||b.dia%5===0)?b.lb:""):b.lb.split(" ")[0]):(rotulos==="curto"&&buckets.length===12?b.lb[0].toUpperCase():b.lb);
-    return `<div class="col${b.atual?" atual":""}" title="${esc(b.lb)}: ${nf(b[seg])} L">
-      ${poucos&&rotulos==="normal"?`<div class="vl">${b[seg]?volTxt(b[seg]):"—"}</div>`:""}
-      <div class="barra" style="height:${b[seg]/max*altura}px"></div><div class="lb">${esc(lb)}</div></div>`;}).join("");
+/* ordenação dos rankings: 1º clique = maior primeiro, 2º = menor primeiro.
+   Em ordem crescente, quem tem "—" (zero) na coluna vai para o fim. */
+const ordemDe=id=>estado.ord[id]||ORD_PADRAO[id]||{k:"tot",dir:-1};
+function ordenar(lista,id){const o=ordemDe(id);return [...lista].sort((x,y)=>{
+  const a=x[o.k],b=y[o.k];
+  if(typeof a==="string"||typeof b==="string")return o.dir*String(a).localeCompare(String(b));
+  if(o.dir>0&&(!a||!b)&&a!==b)return a?-1:1;
+  if(a==null||b==null)return a==null?1:-1;
+  return o.dir*(a-b)||((y.tot||0)-(x.tot||0));});}
+function marcarOrdem(){document.querySelectorAll("th.ord").forEach(th=>{
+  const o=ordemDe(th.closest("section").id), on=th.dataset.ord===o.k;
+  th.classList.toggle("ativo",on);th.querySelector(".seta").textContent=on?(o.dir<0?"▼":"▲"):"▾";
+  th.setAttribute("aria-sort",on?(o.dir<0?"descending":"ascending"):"none");});}
+
+/* gráfico de linhas em SVG (mede a caixa na hora de desenhar) */
+function topoBonito(v){if(v<=0)return 1;const e=Math.pow(10,Math.floor(Math.log10(v))),f=v/e;return (f<=1?1:f<=2?2:f<=2.5?2.5:f<=5?5:10)*e;}  // passo "redondo" ≥ v
+function svgLinhas(box,cfg){
+  const W=box.clientWidth||600,H=box.clientHeight||200,pl=52,pr=cfg.margemDir??96,pt=12,pb=22;
+  const vals=[];cfg.series.forEach(s=>{s.vals.forEach(v=>v!=null&&vals.push(v));if(s.proj)vals.push(s.proj.v);});
+  const vmax=Math.max(...vals,0)||1, passoY=topoBonito(vmax/3), nT=Math.max(1,Math.ceil(vmax/passoY)), max=passoY*nT, n=cfg.labels.length;
+  const x=i=>pl+(n<=1?(W-pl-pr)/2:i*(W-pl-pr)/(n-1)), y=v=>pt+(H-pt-pb)*(1-v/max);
+  const fmt=cfg.fmt;let g="";
+  for(let k=0;k<=nT;k++){const v=passoY*k,yy=y(v).toFixed(1);
+    g+=`<line x1="${pl}" x2="${W-pr+8}" y1="${yy}" y2="${yy}" stroke="rgba(182,222,1,${k?0.12:0.3})"/>`+
+       `<text x="${pl-8}" y="${(+yy+4).toFixed(1)}" text-anchor="end" font-size="12" fill="var(--suave)">${fmt(v,true)}</text>`;}
+  const passo=Math.ceil(n/Math.max(2,Math.min(cfg.maxRotulos||14,Math.floor((W-pl-pr)/42))));
+  cfg.labels.forEach((lb,i)=>{if(i%passo&&i!==n-1)return;
+    g+=`<text x="${x(i).toFixed(1)}" y="${H-4}" text-anchor="middle" font-size="12" fill="${i===cfg.destaque?"var(--lima)":"var(--suave)"}" font-weight="${i===cfg.destaque?700:400}">${esc(lb)}</text>`;});
+  if(cfg.destaque!=null){const lw=Math.max(16,(W-pl-pr)/Math.max(n-1,1)),x0=Math.max(pl-8,x(cfg.destaque)-lw/2),x1=Math.min(W-pr+16,x(cfg.destaque)+lw/2);
+    g+=`<rect x="${x0.toFixed(1)}" y="${pt}" width="${(x1-x0).toFixed(1)}" height="${H-pt-pb}" rx="6" fill="rgba(242,252,0,.06)"/>`;}
+  const rotulosFim=[];
+  for(const s of cfg.series){
+    let d="",ini=true,ultimo=-1;
+    s.vals.forEach((v,i)=>{if(v==null){ini=true;return;}d+=`${ini?"M":"L"}${x(i).toFixed(1)},${y(v).toFixed(1)}`;ini=false;ultimo=i;});
+    g+=`<path d="${d}" fill="none" stroke="${s.cor}" stroke-width="${s.larg||2.5}" stroke-linejoin="round" stroke-linecap="round" ${s.trac?'stroke-dasharray="6 5"':""}/>`;
+    s.vals.forEach((v,i)=>{if(v==null)return;
+      g+=`<circle cx="${x(i).toFixed(1)}" cy="${y(v).toFixed(1)}" r="${n>16?2:3.5}" fill="${s.cor}"><title>${esc(s.nome)} · ${esc(cfg.labels[i])}: ${fmt(v)}</title></circle>`;});
+    if(s.proj&&s.proj.i>0&&s.vals[s.proj.i-1]!=null){const p=s.proj;
+      g+=`<path d="M${x(p.i-1).toFixed(1)},${y(s.vals[p.i-1]).toFixed(1)}L${x(p.i).toFixed(1)},${y(p.v).toFixed(1)}" fill="none" stroke="${s.cor}" stroke-width="2" stroke-dasharray="3 5"/>`+
+         `<circle cx="${x(p.i).toFixed(1)}" cy="${y(p.v).toFixed(1)}" r="5" fill="#05301B" stroke="${s.cor}" stroke-width="2"><title>${esc(s.nome)} · projeção de ${esc(cfg.labels[p.i])}: ${fmt(p.v)}</title></circle>`;
+      rotulosFim.push({y:y(p.v),txt:`${fmt(p.v)} proj.`,cor:s.cor,x:x(p.i)});}
+    else if(ultimo>=0)rotulosFim.push({y:y(s.vals[ultimo]),txt:fmt(s.vals[ultimo]),cor:s.cor,x:x(ultimo)});
+  }
+  rotulosFim.sort((a,b)=>a.y-b.y);for(let i=1;i<rotulosFim.length;i++)if(rotulosFim[i].y-rotulosFim[i-1].y<15)rotulosFim[i].y=rotulosFim[i-1].y+15;
+  for(const r of rotulosFim)g+=`<text x="${(r.x+10).toFixed(1)}" y="${(r.y+4).toFixed(1)}" font-size="13" font-weight="700" fill="${r.cor}">${esc(r.txt)}</text>`;
+  box.innerHTML=`<svg width="${W}" height="${H}" viewBox="0 0 ${W} ${H}" role="img" aria-label="${esc(cfg.titulo||"")}">${g}</svg>`;
+}
+const fmtLitros=(v,eixo)=>v>=1e6?nf(v/1e6,eixo?1:2)+" mi L":v>=1e3?nf(v/1e3,eixo||v>=1e4?0:1)+" mil L":nf(v)+" L";
+const fmtPct=v=>nf(v,v<10&&v>0?1:0)+"%";
+
+/* ============ Página GERAL ============ */
+function bucketsEvol(L,per,ref){
+  const p=per==="dia"?"semana":per,[a,b]=intervalo(p,ref),ka=chave(a),kb=chave(b),m=new Map();
+  for(const l of L){if(l[0]<ka||l[0]>kb)continue;const k=p==="ano"?l[0].slice(0,7):l[0];m.set(k,(m.get(k)||0)+l[5]);}
+  if(p==="ano")return MES.map((lb,i)=>{const k=`${a.getFullYear()}-${String(i+1).padStart(2,"0")}`;
+    return {lb,v:m.get(k)||0,atual:k===chave(HOJE).slice(0,7)};});
+  return diasEntre(a,b).map(d=>({lb:p==="mes"?String(d.getDate()):`${SEM[d.getDay()]} ${d.getDate()}`,
+    dia:d.getDate(),v:m.get(chave(d))||0,atual:per==="dia"?mesmoDia(d,ref):mesmoDia(d,HOJE)}));
+}
+function ritmo(L,per,ref){
+  const p=per==="dia"?"semana":per,[a,b]=intervalo(p,ref),refAnt=new Date(a);refAnt.setDate(refAnt.getDate()-1);
+  const [pa,pb]=intervalo(p,refAnt),ka=chave(a),kb=chave(b),kpa=chave(pa),kpb=chave(pb);
+  const idx=(dt,ini)=>p==="ano"?+dt.slice(5,7)-1:difDias(ini,dt);
+  const nCur=p==="ano"?12:difDias(ka,kb)+1,nAnt=p==="ano"?12:difDias(kpa,kpb)+1,n=Math.max(nCur,nAnt);
+  const cur=new Array(n).fill(0),ant=new Array(n).fill(0);
+  for(const l of L){if(l[0]>=ka&&l[0]<=kb)cur[idx(l[0],ka)]+=l[5];else if(l[0]>=kpa&&l[0]<=kpb)ant[idx(l[0],kpa)]+=l[5];}
+  const ult=DADOS._ultimo;let limCur=nCur-1;
+  if(ult<ka)limCur=-1;else if(ult<kb)limCur=idx(ult,ka);
+  const acc=(arr,lim)=>{let s=0;return arr.map((v,i)=>i<=lim?(s+=v):null);};
+  const labels=Array.from({length:n},(_,i)=>p==="ano"?MES[i]:p==="semana"?SEM[i]:String(i+1));
+  return {labels,cur:acc(cur,limCur),ant:acc(ant,nAnt-1),limCur,p};
+}
+function desenharGeral(L,j,cur,ant){
+  const {per,ref}=estado, nN=cur.notas.size, nC=cur.clis.size, aN=ant.notas.size, aC=ant.clis.size;
+  const lpn=nN?cur.tot/nN:0, lpnA=aN?ant.tot/aN:0, md=cur.dias.size?cur.tot/cur.dias.size:0, mdA=ant.dias.size?ant.tot/ant.dias.size:0;
+  $("kpisG").innerHTML=
+    kpi({t:"Volume total",v:vHtml(cur.tot),d:delta(cur.tot,ant.tot,j.txt)})+
+    kpi({t:"Notas faturadas",v:nf(nN),d:delta(nN,aN,j.txt)})+
+    kpi({t:"Clientes atendidos",v:nf(nC),d:delta(nC,aC,j.txt)})+
+    kpi({t:"Litros por nota",v:`${nf(lpn)}<small>L</small>`,d:delta(lpn,lpnA,j.txt)})+
+    kpi({t:"Média por dia faturado",v:vHtml(md),d:`${nf(cur.dias.size)} ${cur.dias.size===1?"dia":"dias"} · ${seta(varPct(md,mdA))||"sem base"}`});
+
+  /* evolução */
+  const bk=bucketsEvol(L,per,ref), box=$("evoGraf"), poucos=bk.length<=12;
+  const altura=Math.max(60,(box.clientHeight||170)-24-(poucos?20:0)), max=Math.max(...bk.map(b=>b.v),1);
+  const esparso=bk.length>16&&(box.clientWidth||900)<bk.length*24;
+  const comV=bk.filter(b=>b.v>0), media=comV.length?comV.reduce((s,b)=>s+b.v,0)/comV.length:0;
+  $("evoTit").textContent=per==="ano"?"Evolução do volume por mês":"Evolução do volume por dia";
+  $("evoNota").textContent=per==="dia"?"Semana do dia escolhido — o dia fica aceso":per==="ano"?"Litros faturados em cada mês":"Litros faturados em cada dia";
+  $("evoMed").textContent=media?`média ${fmtLitros(media)} por ${per==="ano"?"mês":"dia"} faturado`:"";
+  box.innerHTML=bk.map(b=>`<div class="col${b.atual?" atual":""}" title="${esc(b.lb)}: ${nf(b.v)} L">
+      ${poucos?`<div class="vl">${b.v?fmtLitros(b.v):"—"}</div>`:""}
+      <div class="barra" style="height:${b.v/max*altura}px"></div><div class="lb">${esc(esparso&&b.dia!==1&&b.dia%5&&!b.atual?"":b.lb)}</div></div>`).join("")+
+    (media?`<div class="media-linha" style="bottom:${24+media/max*altura}px"></div>`:"");
+
+  /* ritmo acumulado */
+  const r=ritmo(L,per,ref), NOM={mes:["Este mês","Mês anterior"],semana:["Esta semana","Semana anterior"],ano:["Este ano","Ano anterior"]}[r.p];
+  const temAnt=r.ant.some(v=>v>0);
+  svgLinhas($("ritmoSvg"),{titulo:"Ritmo acumulado",labels:r.labels,fmt:fmtLitros,maxRotulos:r.p==="mes"?16:12,
+    series:[...(temAnt?[{nome:NOM[1],cor:"#9DC4A6",vals:r.ant,trac:true,larg:2}]:[]),{nome:NOM[0],cor:"#F2FC00",vals:r.cur,larg:3}]});
+  const ia=r.limCur, ac=ia>=0?r.cur[ia]:0, aa=ia>=0&&temAnt?r.ant[Math.min(ia,r.ant.length-1)]:0;
+  const ate=r.p==="ano"?MESX[ia]:r.p==="semana"?{dom:"domingo",seg:"segunda",ter:"terça",qua:"quarta",qui:"quinta",sex:"sexta",sáb:"sábado"}[SEM[ia]]:"o dia "+r.labels[ia];
+  $("ritmoNota").innerHTML=(ia>=0&&aa?`<span class="res">${seta(varPct(ac,aa))} até ${ate}</span>`:"")+
+    `<span class="leg"><span class="lg-a">${NOM[0]}</span>${temAnt?`<span class="lg-b">${NOM[1]}</span>`:"<span>sem dados do período anterior</span>"}</span>`;
+
+  /* ranking de vendedores */
+  const lista=[...cur.vend].map(([nome,o])=>{const a=ant.vend.get(nome);
+    return {nome,tot:o.tot,var:varPct(o.tot,a?.tot||0),notas:o.notas.size,clis:o.clis.size};});
+  $("tbVend").innerHTML=lista.length?ordenar(lista,"rkVend").map((v,i)=>`<tr><td class="n">${i+1}</td>
+    <td class="nm" title="${esc(v.nome)}">${esc(v.nome)}</td><td class="num tt">${nf(v.tot)}</td>
+    <td class="num var">${v.var!=null?seta(v.var):ant.tot?'<span class="zero">novo</span>':'<span class="zero">—</span>'}</td>
+    <td class="num sub">${nf(v.notas)}</td><td class="num sub">${nf(v.clis)}</td></tr>`).join("")
+    :'<tr><td class="sub">Nada faturado neste período.</td></tr>';
 }
 
+/* ============ Página PRODUTO ============ */
+function dadosEpoca(L,per,ref){
+  const C=DADOS._classe, fim=per==="ano"?new Date(ref.getFullYear(),11,1):new Date(ref.getFullYear(),ref.getMonth(),1);
+  let inicio=DADOS._primeiro.slice(0,7);
+  if(+DADOS._primeiro.slice(8,10)>1){const d=deChave(DADOS._primeiro.slice(0,7)+"-01");d.setMonth(d.getMonth()+1);inicio=chave(d).slice(0,7);} // mês incompleto no começo do histórico
+  const ultM=DADOS._ultimo.slice(0,7), meses=[];
+  for(let i=11;i>=0;i--){const k=chave(new Date(fim.getFullYear(),fim.getMonth()-i,1)).slice(0,7);if(k>=inicio&&k<=ultM)meses.push(k);}
+  const agg=new Map(meses.map(k=>[k,zero()]));
+  for(const l of L){const o=agg.get(l[0].slice(0,7));if(!o)continue;const c=C[l[4]];o.tot+=l[5];if(c){if(c.pouch)o.pouch+=l[5];if(c.sint)o.sint+=l[5];if(c.drive)o.drive+=l[5];}}
+  const dUlt=+DADOS._ultimo.slice(8,10), fator=meses.includes(ultM)&&dUlt<diasNoMes(DADOS._ultimo)?diasNoMes(DADOS._ultimo)/dUlt:0;
+  return {meses,agg,fator,iParcial:fator?meses.indexOf(ultM):-1,inicio};
+}
+function desenharProduto(L,j,cur,ant){
+  const {per,ref}=estado, T=cur, pP=pct(T.pouch,T.tot);
+  const card=(cls,t,k)=>kpi({cls,cor:1,t,v:vHtml(T[k]),d:`<b class="pc">${pctTxt(pct(T[k],T.tot))}</b> do total ${seta(varPct(T[k],ant[k]))}`});
+  $("kpisP").innerHTML=
+    kpi({t:"Volume total",v:vHtml(T.tot),d:delta(T.tot,ant.tot,j.txt)})+
+    kpi({cls:"destaque",t:"Volume Pouch",v:vHtml(T.pouch),med:pP,d:`<b>${pctTxt(pP)}</b> do volume total ${seta(varPct(T.pouch,ant.pouch))}`})+
+    card("sint","Volume Sintéticos","sint")+card("drive","Volume Driveline","drive")+
+    kpi({t:"Produtos vendidos",v:nf(T.prods.size),d:`códigos diferentes ${seta(varPct(T.prods.size,ant.prods.size))}`});
+
+  /* volume por época */
+  const e=dadosEpoca(L,per,ref), modo=estado.epocaModo, rotulos=e.meses.map(k=>MES[+k.slice(5,7)-1]+"/"+k.slice(2,4));
+  const SERIES=[["pouch","Pouch","#FFC61A"],["sint","Sintéticos","#62E0C0"],["drive","Driveline","#EAF6E4"]];
+  const destaque=per==="ano"?null:e.meses.indexOf(chave(ref).slice(0,7));
+  svgLinhas($("epocaSvg"),{titulo:"Volume por época",labels:rotulos,destaque:destaque>=0?destaque:null,margemDir:110,
+    fmt:modo==="pct"?fmtPct:fmtLitros,
+    series:SERIES.map(([k,nome,cor])=>{
+      const vals=e.meses.map(m=>{const o=e.agg.get(m);return modo==="pct"?pct(o[k],o.tot):o[k];});
+      const s={nome,cor,vals};
+      if(modo!=="pct"&&e.iParcial>0){s.proj={i:e.iParcial,v:vals[e.iParcial]*e.fator};s.vals=vals.map((v,i)=>i===e.iParcial?null:v);}
+      return s;})});
+  $("epocaLeg").innerHTML=SERIES.map(([k,nome])=>`<span class="${k}">${nome}</span>`).join("");
+  $("epocaNota").textContent=(modo==="pct"?"Participação de cada linha no volume do mês":"Litros por mês")+
+    (e.meses.length<2?" · ainda há pouco histórico":"")+
+    (modo!=="pct"&&e.iParcial>0?` · ${rotulos[e.iParcial]} projetado pelo ritmo até ${fmtData(DADOS._ultimo,true)}`:"");
+
+  /* cobertura das notas */
+  const nN=T.notas.size, LINHAS=[["pouch","Pouch"],["sint","Sintético"],["drive","Driveline"]];
+  $("focoNota").textContent=`% das ${nf(nN)} notas faturadas com a linha`;
+  $("comp").innerHTML=LINHAS.map(([k,nome])=>{const c={ped:T.cob[k][0].size,cli:T.cob[k][1].size},p=pct(c.ped,nN);
+    return `<div class="linha ${k}" title="${nome}: ${nf(c.ped)} de ${nf(nN)} notas · ${nf(c.cli)} de ${nf(T.clis.size)} clientes">
+      <div class="nome">${nome}</div><div class="trilho"><i style="width:${p}%"></i></div>
+      <div class="val">${pctTxt(p)}<em><b>${nf(c.ped)}</b> de ${nf(nN)} notas · <b>${nf(c.cli)}</b> clientes</em></div></div>`;}).join("");
+
+  /* ranking de produtos */
+  const f=estado.prodFiltro, C=DADOS._classe;
+  const lista=[...T.prod].filter(([cod,o])=>o.tot>0&&(!f||C[cod]?.[f])).map(([cod,o])=>({cod,nome:nomeProduto(cod),c:C[cod],
+    tot:o.tot,notas:o.notas.size,clis:o.clis.size,var:varPct(o.tot,ant.prod.get(cod)?.tot||0)}));
+  const tags=c=>c?["pouch","sint","drive"].filter(k=>c[k]).map(k=>`<i class="tag ${k}" title="${{pouch:"Pouch",sint:"Sintético",drive:"Driveline"}[k]}"></i>`).join(""):"";
+  $("tbProd").innerHTML=lista.length?ordenar(lista,"rkProd").map((p,i)=>`<tr><td class="n">${i+1}</td>
+    <td class="nm prod${p.c?.pouch?" eh-pouch":""}" title="${esc(p.nome)}">${esc(p.nome.replace(/^LUBRAX\s+/i,""))}${tags(p.c)}<small>${esc(p.cod)} · ${esc(p.c?.cat||SEM_CLASSIF)}</small></td>
+    <td class="num tt">${nf(p.tot)}</td><td class="num var">${p.var!=null?seta(p.var):ant.tot?'<span class="zero">novo</span>':'<span class="zero">—</span>'}</td>
+    <td class="num sub">${nf(p.notas)}</td><td class="num sub">${nf(p.clis)}</td></tr>`).join("")
+    :`<tr><td class="sub">Nenhum produto${f?" desta linha":""} faturado no período.</td></tr>`;
+}
+
+/* ============ Página CLIENTES ============ */
+function desenharClientes(L,j,cur,ant){
+  const refFim=j.fim, N=+estado.paradoDias, hist=new Map();
+  for(const l of L){if(l[0]>refFim)continue;let h=hist.get(l[2]);
+    if(!h){h={prim:l[0],ult:"",tot:0,vend:l[1]};hist.set(l[2],h);}
+    if(l[0]<h.prim)h.prim=l[0];if(l[0]>=h.ult){h.ult=l[0];h.vend=l[1];}h.tot+=l[5];}
+  const todos=[...hist].map(([id,h])=>({id,...h,dias:difDias(h.ult,refFim),med:h.tot/mesesEntre(h.prim,h.ult)}));
+  const novos=todos.filter(c=>c.prim>=j.ka&&c.prim<=j.kb).length, parados=todos.filter(c=>c.dias>=N);
+  const perdido=parados.reduce((s,c)=>s+c.med,0), nC=cur.clis.size, aC=ant.clis.size;
+  const lpc=nC?cur.tot/nC:0, lpcA=aC?ant.tot/aC:0, npc=nC?cur.notas.size/nC:0, npcA=aC?ant.notas.size/aC:0;
+  $("kpisC").innerHTML=
+    kpi({t:"Clientes atendidos",v:nf(nC),d:delta(nC,aC,j.txt)})+
+    kpi({t:"Clientes novos",v:nf(novos),d:`1ª compra no histórico (desde ${fmtData(DADOS._primeiro,true)})`})+
+    kpi({cls:"alerta",t:`Sem compra há ${N}+ dias`,v:nf(parados.length),d:`cerca de ${fmtLitros(perdido)}/mês deixaram de entrar`})+
+    kpi({t:"Litros por cliente",v:`${nf(lpc)}<small>L</small>`,d:delta(lpc,lpcA,j.txt)})+
+    kpi({t:"Notas por cliente",v:nf(npc,1),d:delta(npc,npcA,j.txt)});
+
+  /* ranking de clientes do período */
+  const lista=[...cur.cli].map(([id,o])=>({id,nome:DADOS.clientes[id]||"Cliente "+id,fant:DADOS.fantasia?.[id]||"",uf:UF_DE.get(id)||"",
+    vend:[...o.vend].join(", "),notas:o.notas.size,tot:o.tot,pouch:o.pouch,sint:o.sint,drive:o.drive}));
+  $("tbCli").innerHTML=lista.length?ordenar(lista,"rkCli").map((c,i)=>`<tr><td class="n">${i+1}</td>
+    <td class="nm" title="${esc(c.nome+(c.fant?" · "+c.fant:""))}">${esc(c.nome)}</td><td class="id">${esc(c.id)}</td><td class="uf">${esc(c.uf)}</td>
+    <td class="vd" title="${esc(c.vend)}">${esc(c.vend)}</td><td class="num sub">${nf(c.notas)}</td>
+    <td class="num tt">${nf(c.tot)}</td>${cel(c.pouch,"pouch")}${cel(c.sint,"sint")}${cel(c.drive,"drive")}</tr>`).join("")
+    :'<tr><td class="sub">Nada faturado neste período.</td></tr>';
+
+  /* recência */
+  const FX=[["r1","Até 30 dias",0,30],["r2","31 a 60 dias",31,60],["r3","61 a 90 dias",61,90],["r4","Mais de 90 dias",91,1e9]];
+  const base=todos.length;
+  $("recNota").textContent=`Clientes por dias desde a última compra, em ${fmtData(refFim,true)}`;
+  $("recLinhas").innerHTML=FX.map(([cls,nome,a,b])=>{const n=todos.filter(c=>c.dias>=a&&c.dias<=b).length,p=pct(n,base);
+    return `<div class="linha ${cls}"><div class="nome">${nome}</div><div class="trilho"><i style="width:${p}%"></i></div>
+      <div class="val">${nf(n)}<small>clientes</small><em><b>${pctTxt(p)}</b> da base de ${nf(base)}</em></div></div>`;}).join("");
+
+  /* pararam de comprar */
+  $("paradoNota").textContent=`${nf(parados.length)} clientes sem comprar há ${N} dias ou mais, contando até ${fmtData(refFim,true)}`;
+  const lp=parados.map(c=>({...c,nome:DADOS.clientes[c.id]||"Cliente "+c.id,uf:UF_DE.get(c.id)||"",tot:c.med}));
+  $("tbParados").innerHTML=lp.length?ordenar(lp,"rkParados").map((c,i)=>`<tr><td class="n">${i+1}</td>
+    <td class="nm cli2" title="${esc(c.nome)}">${esc(c.nome)}<small>${esc(c.id)}${c.uf?" · "+c.uf:""} · ${esc(c.vend)}</small></td>
+    <td class="num sub">${fmtData(c.ult,true)}</td><td class="num">${nf(c.dias)}</td><td class="num tt">${nf(c.med)}</td></tr>`).join("")
+    :`<tr><td class="sub">Nenhum cliente parado há ${N}+ dias.</td></tr>`;
+}
+
+/* ============ Desenho geral ============ */
 function desenhar(){
   if(!DADOS)return;
-  const {per,ref,uf}=estado, D=calcular(DADOS,per,ref,uf,estado.vend), T=D.tot;
-  for(const [id,k] of [["fPeriodo","per"],["fUF","uf"]])
-    $(id).querySelectorAll("button").forEach(b=>b.setAttribute("aria-pressed",b.dataset.v===estado[k]));
+  const {per,ref,uf}=estado;
+  for(const [id,k] of [["fPeriodo","per"],["fUF","uf"],["abas","aba"],["epocaModo","epocaModo"],["prodFiltro","prodFiltro"],["paradoDias","paradoDias"]])
+    $(id).querySelectorAll("button").forEach(b=>{const on=b.dataset.v===String(estado[k]);b.setAttribute("aria-pressed",on);if(id==="abas")b.setAttribute("aria-selected",on);});
+  for(const a of ABAS)$("pg-"+a).hidden=a!==estado.aba;
   $("rotulo").textContent=rotulo(per,ref);
   palco.classList.toggle("modo-dia",per==="dia");
   $("prox").disabled=intervalo(per,ref)[1]>=HOJE;
   $("subtit").textContent=`Faturamento · ${uf==="BA"?"Bahia":uf==="SE"?"Sergipe":"Bahia e Sergipe"}`+
     (estado.vend?` · ${estado.vend.size} ${estado.vend.size===1?"vendedor":"vendedores"}`:"");
   marcarBtnVend(); if(!$("popVend").hidden)listarVend();
-
-  const [v1,v2]=volCurto(T.tot), pP=pct(T.pouch,T.tot);
-  const card=(cls,nome,seg)=>{const [a,b]=volCurto(T[seg]);return `<div class="kpi ${cls}"><h3><i></i>${nome}</h3>
-     <div class="v">${a}<small>${b}</small></div><div class="d"><b class="pc">${pctTxt(pct(T[seg],T.tot))}</b> do total</div></div>`;};
-  const [p1,p2]=volCurto(T.pouch);
-  const cob=pct(D.pedPouch,D.ped), cobAnt=pct(D.pedPouchAnt,D.pedAnt);
-  $("kpis").innerHTML=`
-   <div class="kpi"><h3>Volume total</h3><div class="v">${v1}<small>${v2}</small></div><div class="d">Litros faturados no período</div></div>
-   <div class="kpi destaque"><h3>Volume Pouch</h3><div class="v">${p1}<small>${p2}</small></div>
-     <div class="medidor"><i style="width:${Math.min(100,pP)}%"></i></div>
-     <div class="d"><b>${pctTxt(pP)}</b> do volume total</div></div>
-   ${card("sint","Volume Sintéticos","sint")}${card("drive","Volume Driveline","drive")}
-   <div class="kpi"><h3>Clientes atendidos</h3><div class="v">${nf(D.cli)}</div><div class="d">${nf(D.ped)} notas faturadas</div></div>`;
-
-  /* Cobertura das notas: notas com pelo menos um item da linha ÷ notas faturadas no período (escala 0–100%) */
-  const LINHAS=[["pouch","Pouch"],["sint","Sintético"],["drive","Driveline"]];
-  $("focoNota").textContent=`% das ${nf(D.ped)} notas faturadas com a linha`;
-  $("comp").innerHTML=LINHAS.map(([k,nome])=>{const c=D.cob[k],p=pct(c.ped,D.ped);
-    return `<div class="linha ${k}" title="${nome}: ${nf(c.ped)} de ${nf(D.ped)} notas · ${nf(c.cli)} de ${nf(D.cli)} clientes">
-      <div class="nome">${nome}</div>
-      <div class="trilho"><i style="width:${p}%"></i></div>
-      <div class="val">${pctTxt(p)}<em><b>${nf(c.ped)}</b> de ${nf(D.ped)} notas · <b>${nf(c.cli)}</b> clientes</em></div></div>`;}).join("");
-
-  const cel=(v,cls)=>`<td class="num c ${v?cls:"zero"}">${v?nf(v):"—"}</td>`;
-  // crescente: quem não comprou a linha (—) vai para o fim, para o ranking começar pelo menor volume real
-  const ordenar=(lista,o)=>[...lista].sort((x,y)=>{
-    if(o.dir>0&&o.k!=="tot"&&(!x[o.k]||!y[o.k])&&x[o.k]!==y[o.k])return x[o.k]?-1:1;
-    return o.dir*(x[o.k]-y[o.k])||(y.tot-x.tot);});
-  const marcar=(tabela,o)=>document.querySelectorAll(`#${tabela} th.ord`).forEach(th=>{const on=th.dataset.ord===o.k;
-    th.classList.toggle("ativo",on);th.querySelector(".seta").textContent=on?(o.dir<0?"▼":"▲"):"▾";
-    th.setAttribute("aria-sort",on?(o.dir<0?"descending":"ascending"):"none");});
-  marcar("vendedores",estado.ordV); marcar("clientes",estado.ordC);
-  $("tbVend").innerHTML=D.vend.length?ordenar(D.vend,estado.ordV).map((v,i)=>`<tr><td class="n">${i+1}</td>
-    <td class="nm" title="${esc(v.nome)}">${esc(v.nome)}</td><td class="num tt">${nf(v.tot)}</td>
-    ${cel(v.pouch,"pouch")}${cel(v.sint,"sint")}${cel(v.drive,"drive")}
-    <td class="num cob${v.pp.size?"":" zero"}"><b>${nf(v.pp.size)}</b>/${nf(v.ped.size)}</td></tr>`).join("")
-    :'<tr><td class="sub">Nada faturado neste período.</td></tr>';
-  $("tbCli").innerHTML=D.clis.length?ordenar(D.clis,estado.ordC).map((c,i)=>`<tr><td class="n">${i+1}</td>
-    <td class="nm" title="${esc(c.nome+(c.fant?" · "+c.fant:""))}">${esc(c.nome)}</td><td class="id">${esc(c.id)}</td><td class="uf">${esc(c.uf)}</td>
-    <td class="vd" title="${esc([...c.vend].join(", "))}">${esc([...c.vend].join(", "))}</td><td class="num sub">${nf(c.ped.size)}</td>
-    <td class="num tt">${nf(c.tot)}</td>${cel(c.pouch,"pouch")}${cel(c.sint,"sint")}${cel(c.drive,"drive")}</tr>`).join("")
-    :'<tr><td class="sub">Nada faturado neste período.</td></tr>';
-  rodape();
-  if(D.semClassif) console.warn(`${D.semClassif} L sem classificação no período`);
+  const L=linhasFiltradas(DADOS,uf,estado.vend), j=janelas(per,ref), C=DADOS._classe;
+  const cur=acumular(L,C,j.ka,j.kb), ant=acumular(L,C,j.kpa,j.kpb);
+  ({geral:desenharGeral,produto:desenharProduto,clientes:desenharClientes})[estado.aba](L,j,cur,ant);
+  marcarOrdem(); rodape();
+  if(cur.semClassif) console.warn(`${cur.semClassif} L sem classificação no período`);
 }
+function trocarAba(a){
+  if(!ABAS.includes(a)||a===estado.aba)return;
+  estado.aba=a;try{localStorage.setItem("painel-volume-aba",a);}catch(e){}
+  try{history.replaceState(null,"","#"+a);}catch(e){}
+  fecharCal();fecharVend();desenhar();if(CELULAR.matches)window.scrollTo({top:0});
+}
+let tRedim;addEventListener("resize",()=>{clearTimeout(tRedim);tRedim=setTimeout(desenhar,150);});
 
 function rodape(msgErro){
   $("rodape").className="abs atrasado";
@@ -906,10 +1230,14 @@ document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!popVend.hidden){fe
 
 $("fUF").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;estado.uf=b.dataset.v;desenhar();});
 /* Ordenar rankings: 1º clique = maior primeiro, 2º clique = menor primeiro */
-for(const [tab,ch] of [["vendedores","ordV"],["clientes","ordC"]])
-  $(tab).querySelector("thead").addEventListener("click",e=>{const th=e.target.closest("th.ord");if(!th)return;
-    const o=estado[ch];o.dir=o.k===th.dataset.ord?-o.dir:-1;o.k=th.dataset.ord;desenhar();
-    $(tab).querySelector(".rolagem").scrollTop=0;});
+document.addEventListener("click",e=>{const th=e.target.closest("th.ord");if(!th)return;const sec=th.closest("section"),id=sec.id;
+  const o={...ordemDe(id)};o.dir=o.k===th.dataset.ord?-o.dir:-1;o.k=th.dataset.ord;estado.ord[id]=o;desenhar();
+  const r=sec.querySelector(".rolagem");if(r)r.scrollTop=0;});
+/* Abas e botões dentro das páginas */
+$("abas").addEventListener("click",e=>{const b=e.target.closest("button");if(b)trocarAba(b.dataset.v);});
+for(const [id,k] of [["epocaModo","epocaModo"],["prodFiltro","prodFiltro"],["paradoDias","paradoDias"]])
+  $(id).addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;estado[k]=b.dataset.v;desenhar();});
+addEventListener("hashchange",()=>{const h=location.hash.replace("#","");if(ABAS.includes(h))trocarAba(h);});
 $("ant").addEventListener("click",()=>{estado.ref=mover(estado.per,estado.ref,-1);desenhar();});
 $("prox").addEventListener("click",()=>{estado.ref=mover(estado.per,estado.ref,1);desenhar();});
 
